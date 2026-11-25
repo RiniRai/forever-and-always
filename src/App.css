@@ -1,0 +1,1517 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
+
+/* =========================
+   ROOT & RESET
+========================= */
+
+:root {
+  font-family: "DM Sans", "Noto Sans Devanagari", sans-serif;
+  color: #49353a;
+  background: #fff9f6;
+
+  --pink: #d77e91;
+  --pink-dark: #b85d75;
+  --pink-light: #f8e4e7;
+  --pink-pale: #fff0f1;
+  --cream: #fff9f6;
+  --ivory: #fffdfb;
+  --text: #49353a;
+  --muted: #8e747a;
+  --border: rgba(184, 93, 117, 0.16);
+  --shadow: 0 18px 55px rgba(119, 65, 80, 0.10);
+  --soft-shadow: 0 10px 30px rgba(119, 65, 80, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(248, 228, 231, 0.75),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 95% 45%,
+      rgba(255, 235, 226, 0.55),
+      transparent 28rem
+    ),
+    var(--cream);
+}
+
+body,
+button {
+  font-family: "DM Sans", "Noto Sans Devanagari", sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(184, 93, 117, 0.5);
+  outline-offset: 4px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: #fff;
+  background: var(--pink-dark);
+}
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.anniversary-site {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.anniversary-site section,
+.anniversary-site header,
+.anniversary-site footer {
+  position: relative;
+  z-index: 1;
+}
+
+.anniversary-site section {
+  scroll-margin-top: 85px;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+  position: absolute;
+  z-index: 0;
+  color: rgba(190, 103, 126, 0.22);
+  pointer-events: none;
+  user-select: none;
+  animation: heartFloat 6s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 155px;
+  left: 4%;
+  font-size: 44px;
+  transform: rotate(-14deg);
+}
+
+.heart-two {
+  top: 420px;
+  right: 5%;
+  font-size: 34px;
+  animation-delay: 1.5s;
+}
+
+.heart-three {
+  top: 760px;
+  left: 8%;
+  font-size: 28px;
+  animation-delay: 2.5s;
+}
+
+@keyframes heartFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -13px;
+  }
+}
+
+/* =========================
+   HEADER / NAVIGATION
+========================= */
+
+.topbar {
+  width: min(1160px, calc(100% - 64px));
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--pink-dark);
+  font-family: "Playfair Display", "Noto Sans Devanagari", serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.brand span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink);
+  font-size: 24px;
+}
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.topbar nav a,
+.topbar nav button {
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.topbar nav a:hover,
+.topbar nav button:hover {
+  color: var(--pink-dark);
+}
+
+.music-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 11px 17px;
+  border: 1px solid rgba(184, 93, 117, 0.22);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--pink-dark);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.music-toggle:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--soft-shadow);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  width: min(1160px, calc(100% - 64px));
+  min-height: 610px;
+  margin: 0 auto;
+  padding: 74px 0 84px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 570px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 22px;
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 1px;
+  background: var(--pink);
+}
+
+.hero h1 {
+  margin: 0;
+  color: #51353e;
+  font-family: "Playfair Display", "Noto Sans Devanagari", serif;
+  font-size: clamp(38px, 4.4vw, 62px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.7px;
+}
+
+.hero h1 span {
+  display: block;
+  margin-top: 7px;
+  color: var(--pink-dark);
+  font-style: italic;
+}
+
+.hero-hindi {
+  max-width: 470px;
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 15px;
+  line-height: 2.1;
+}
+
+.hero-copy > p:not(.eyebrow):not(.hero-hindi) {
+  max-width: 460px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 14px 23px;
+  border: 1px solid var(--pink-dark);
+  border-radius: 5px;
+  background: var(--pink-dark);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(184, 93, 117, 0.18);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  background: #a94f68;
+  box-shadow: 0 12px 26px rgba(184, 93, 117, 0.24);
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 49px;
+  padding: 13px 18px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--pink-dark);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.secondary-button:hover {
+  border-color: var(--pink);
+  background: #fff;
+}
+
+/* =========================
+   HERO PHOTO
+========================= */
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.photo-frame {
+  position: relative;
+  width: min(100%, 420px);
+  padding: 13px;
+  border: 1px solid rgba(184, 93, 117, 0.2);
+  border-radius: 210px 210px 8px 8px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow);
+  transform: rotate(2deg);
+  transition: transform 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.photo-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 0.78;
+  border-radius: 200px 200px 4px 4px;
+  background: var(--pink-light);
+}
+
+.couple-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.photo-frame:hover .couple-photo {
+  transform: scale(1.035);
+}
+
+.photo-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 8px 8px;
+}
+
+.photo-caption p {
+  margin: 0;
+  color: var(--text);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.photo-caption div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--pink-dark);
+}
+
+.photo-caption div span {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 11px;
+}
+
+/* =========================
+   SECTION COMMON STYLES
+========================= */
+
+.love-section,
+.letter-section,
+.song-section {
+  width: min(1160px, calc(100% - 64px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.section-heading h2,
+.letter-content h2,
+.song-info h2 {
+  margin: 0;
+  color: #51353e;
+  font-family: "Playfair Display", "Noto Sans Devanagari", serif;
+  font-size: clamp(29px, 3.3vw, 43px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.7px;
+}
+
+.section-intro {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* =========================
+   LOVE / WISHES SECTION
+========================= */
+
+.love-section {
+  padding-top: 45px;
+  padding-bottom: 100px;
+}
+
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.wish-card {
+  position: relative;
+  min-width: 0;
+  padding: 31px 26px 29px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 28px rgba(119, 65, 80, 0.04);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.wish-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #e5a3b1, #f5d4d8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 93, 117, 0.3);
+  box-shadow: var(--shadow);
+}
+
+.wish-card:hover::before {
+  transform: scaleX(1);
+}
+
+.wish-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  background: var(--pink-pale);
+  color: var(--pink-dark);
+  font-size: 23px;
+}
+
+.wish-card h3 {
+  margin: 0 0 12px;
+  color: #65424c;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.wish-card > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+.letter-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 70px;
+  padding: 72px 65px;
+  border: 1px solid rgba(184, 93, 117, 0.15);
+  border-radius: 10px;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(248, 228, 231, 0.9),
+      transparent 24rem
+    ),
+    linear-gradient(135deg, #fff5f2, #fffdfb 70%);
+  box-shadow: var(--soft-shadow);
+}
+
+.letter-content .eyebrow {
+  margin-bottom: 18px;
+}
+
+.letter-content h2 {
+  font-size: clamp(30px, 3.2vw, 42px);
+}
+
+.letter-teaser {
+  max-width: 440px;
+  margin: 18px 0 26px;
+  color: var(--muted);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.letter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 1px solid var(--pink-dark);
+  border-radius: 5px;
+  background: var(--pink-dark);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(184, 93, 117, 0.16);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.letter-button:hover {
+  transform: translateY(-2px);
+  background: #a94f68;
+}
+
+.letter-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.letter-envelope {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 150px;
+  border: 1px solid rgba(184, 93, 117, 0.2);
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f5dce0, #fff0ed);
+  box-shadow: 0 18px 35px rgba(119, 65, 80, 0.1);
+  transform: rotate(-5deg);
+  transition: transform 0.35s ease;
+}
+
+.letter-art:hover .letter-envelope {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.letter-envelope::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(184, 93, 117, 0.15);
+  border-radius: 50%;
+  background: #fff9f6;
+}
+
+.letter-envelope span {
+  position: relative;
+  z-index: 1;
+  color: var(--pink-dark);
+  font-size: 29px;
+}
+
+.revealed-letter {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 790px;
+  margin: 15px auto 0;
+  padding: 42px clamp(22px, 5vw, 58px);
+  border: 1px solid rgba(184, 93, 117, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 30px rgba(119, 65, 80, 0.06);
+  animation: letterReveal 0.5s ease both;
+}
+
+.revealed-letter h3 {
+  margin: 0 0 24px;
+  color: var(--pink-dark);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.revealed-letter > p {
+  margin: 0 0 18px;
+  color: #755b62;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 14px;
+  line-height: 2.3;
+}
+
+.revealed-letter .letter-signature {
+  margin-top: 27px;
+  color: var(--pink-dark);
+  font-weight: 700;
+}
+
+@keyframes letterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SONG SECTION
+========================= */
+
+.song-section {
+  padding-top: 105px;
+  padding-bottom: 100px;
+}
+
+.song-card {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  align-items: center;
+  gap: 55px;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 43px 55px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow);
+}
+
+.vinyl-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.vinyl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 205px;
+  flex-shrink: 0;
+  border: 6px solid #30252a;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle at center,
+      #292126 0,
+      #292126 3px,
+      #393036 4px,
+      #292126 6px,
+      #292126 9px
+    );
+  box-shadow:
+    0 14px 30px rgba(46, 28, 35, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.vinyl::after {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.vinyl.spinning {
+  animation: vinylSpin 4s linear infinite;
+}
+
+.vinyl-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border: 4px solid #f5d8df;
+  border-radius: 50%;
+  background: var(--pink-dark);
+  color: #fff7f5;
+  font-size: 24px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes vinylSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.song-info {
+  min-width: 0;
+}
+
+.song-info .eyebrow {
+  margin-bottom: 14px;
+}
+
+.song-info h2 {
+  font-size: clamp(28px, 3vw, 37px);
+}
+
+.song-subtitle {
+  margin: 13px 0 25px;
+  color: var(--muted);
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.song-title {
+  margin: 18px 0 5px;
+  color: #65424c;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.song-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 21px;
+  border: 1px solid var(--pink-dark);
+  border-radius: 5px;
+  background: var(--pink-dark);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.song-button:hover {
+  transform: translateY(-2px);
+  background: #a94f68;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  width: min(1160px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 30px 0 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-main {
+  margin: 0;
+  color: #79545f;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.footer-small {
+  margin: 0;
+  color: #a58b91;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* =========================
+   HINDI TEXT SUPPORT
+========================= */
+
+.hero-hindi,
+.section-intro,
+.wish-card > p:last-child,
+.letter-teaser,
+.revealed-letter > p,
+.song-subtitle,
+.footer-main,
+.footer-small,
+.photo-caption p,
+.photo-caption div span {
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.hero h1,
+.section-heading h2,
+.letter-content h2,
+.song-info h2 {
+  line-height: 1.5;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+  .topbar {
+    width: min(100% - 44px, 760px);
+    gap: 16px;
+  }
+
+  .topbar nav {
+    gap: 17px;
+  }
+
+  .topbar nav a,
+  .topbar nav button {
+    font-size: 12px;
+  }
+
+  .hero,
+  .love-section,
+  .letter-section,
+  .song-section,
+  .site-footer {
+    width: min(100% - 44px, 760px);
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 36px;
+    padding-top: 65px;
+    padding-bottom: 75px;
+  }
+
+  .hero h1 {
+    font-size: clamp(35px, 5vw, 49px);
+  }
+
+  .photo-frame {
+    width: 100%;
+  }
+
+  .wishes-grid {
+    gap: 16px;
+  }
+
+  .wish-card {
+    padding: 25px 20px;
+  }
+
+  .letter-section {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 30px;
+    padding: 48px 35px;
+  }
+
+  .song-card {
+    gap: 35px;
+    padding: 35px;
+  }
+
+  .vinyl {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+  .topbar {
+    width: calc(100% - 36px);
+    min-height: 76px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px 0;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand span {
+    font-size: 21px;
+  }
+
+  .music-toggle {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .topbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 5px;
+  }
+
+  .topbar nav a,
+  .topbar nav button {
+    font-size: 11px;
+  }
+
+  .hero,
+  .love-section,
+  .letter-section,
+  .song-section,
+  .site-footer {
+    width: calc(100% - 36px);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding-top: 53px;
+    padding-bottom: 62px;
+  }
+
+  .hero-copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .hero-copy .eyebrow {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(35px, 9vw, 47px);
+    letter-spacing: -0.8px;
+    line-height: 1.4;
+  }
+
+  .hero-hindi {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px;
+  }
+
+  .hero-copy > p:not(.eyebrow):not(.hero-hindi) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .hero-visual {
+    width: min(100%, 380px);
+    margin: 0 auto;
+  }
+
+  .photo-frame {
+    width: min(100%, 340px);
+  }
+
+  .heart-one {
+    top: 125px;
+    left: 3%;
+    font-size: 30px;
+  }
+
+  .heart-two {
+    top: 570px;
+    right: 4%;
+    font-size: 27px;
+  }
+
+  .heart-three {
+    top: 1050px;
+    left: 4%;
+    font-size: 24px;
+  }
+
+  .love-section {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2,
+  .letter-content h2,
+  .song-info h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .section-intro {
+    font-size: 13px;
+  }
+
+  .wishes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .wish-card {
+    padding: 24px;
+  }
+
+  .wish-icon {
+    width: 43px;
+    height: 43px;
+    margin-bottom: 16px;
+  }
+
+  .wish-card h3 {
+    font-size: 16px;
+  }
+
+  .wish-card > p:last-child {
+    font-size: 13px;
+  }
+
+  .letter-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 23px;
+  }
+
+  .letter-content {
+    text-align: center;
+  }
+
+  .letter-content .eyebrow {
+    justify-content: center;
+  }
+
+  .letter-teaser {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 13px;
+  }
+
+  .letter-art {
+    min-height: 185px;
+  }
+
+  .letter-envelope {
+    width: 175px;
+    height: 125px;
+  }
+
+  .revealed-letter {
+    padding: 28px 21px;
+  }
+
+  .revealed-letter h3 {
+    font-size: 19px;
+  }
+
+  .revealed-letter > p {
+    font-size: 13px;
+    line-height: 2.2;
+  }
+
+  .song-section {
+    padding-top: 75px;
+    padding-bottom: 65px;
+  }
+
+  .song-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 30px 22px;
+  }
+
+  .vinyl {
+    width: 165px;
+    height: 165px;
+  }
+
+  .vinyl-label {
+    width: 65px;
+    height: 65px;
+    font-size: 21px;
+  }
+
+  .song-info {
+    text-align: center;
+  }
+
+  .song-info .eyebrow {
+    justify-content: center;
+  }
+
+  .song-subtitle {
+    font-size: 13px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .footer-small {
+    text-align: center;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .topbar,
+  .hero,
+  .love-section,
+  .letter-section,
+  .song-section,
+  .site-footer {
+    width: calc(100% - 28px);
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .music-toggle {
+    gap: 5px;
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .topbar nav {
+    gap: 7px;
+  }
+
+  .topbar nav a,
+  .topbar nav button {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .photo-caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .letter-section {
+    padding: 30px 17px;
+  }
+
+  .song-card {
+    padding: 26px 16px;
+  }
+
+  .section-heading h2,
+  .letter-content h2,
+  .song-info h2 {
+    font-size: 27px;
+  }
+}
+/* =========================
+   INCREASE ALL FONT SIZES
+========================= */
+
+/* Main headings */
+.hero h1 {
+  font-size: clamp(44px, 5vw, 68px);
+}
+
+.section-heading h2,
+.letter-content h2,
+.song-info h2 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+/* Main paragraph text */
+.hero-hindi,
+.section-intro,
+.letter-teaser,
+.song-subtitle {
+  font-size: 17px;
+  line-height: 2.2;
+}
+
+/* Wish cards */
+.wish-card h3 {
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.wish-card > p:last-child {
+  font-size: 16px;
+  line-height: 2.2;
+}
+
+/* Letter */
+.revealed-letter h3 {
+  font-size: 27px;
+  line-height: 1.9;
+}
+
+.revealed-letter > p {
+  font-size: 18px;
+  line-height: 2.3;
+}
+
+.revealed-letter .letter-signature {
+  margin-top: 35px;
+  color: #b85d75;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 2;
+  text-align: right;
+}
+
+/* Navigation and buttons */
+.topbar nav a,
+.topbar nav button,
+.music-toggle,
+.primary-button,
+.secondary-button,
+.letter-button,
+.song-button {
+  font-size: 14px;
+}
+
+/* Photo caption */
+.photo-caption p {
+  font-size: 16px;
+}
+
+.photo-caption div span {
+  font-size: 13px;
+}
+
+/* Song title */
+.song-title {
+  font-size: 19px;
+}
+
+/* Footer */
+.footer-main {
+  font-size: 16px;
+}
+
+.footer-small {
+  font-size: 13px;
+}
+
+/* Keep text readable on mobile */
+@media (max-width: 650px) {
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .section-heading h2,
+  .letter-content h2,
+  .song-info h2 {
+    font-size: 32px;
+  }
+
+  .hero-hindi,
+  .section-intro,
+  .letter-teaser,
+  .song-subtitle {
+    font-size: 15px;
+  }
+
+  .wish-card h3 {
+    font-size: 19px;
+  }
+
+  .wish-card > p:last-child {
+    font-size: 15px;
+  }
+
+  .revealed-letter h3 {
+    font-size: 23px;
+  }
+
+  .revealed-letter > p {
+    font-size: 16px;
+  }
+
+  .revealed-letter .letter-signature {
+    font-size: 27px;
+  }
+}
+
+
+/* Modern rectangular photo frame */
+.photo-frame {
+  width: min(100%, 440px);
+  padding: 10px;
+  border: 1px solid rgba(184, 93, 117, 0.2);
+  border-radius: 18px;
+  background: #fffdfb;
+  box-shadow: 0 20px 50px rgba(119, 65, 80, 0.13);
+  transform: rotate(0deg);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(119, 65, 80, 0.18);
+}
+
+.photo-inner {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 11px;
+  background: #f8e4e7;
+}
+
+.couple-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.photo-frame:hover .couple-photo {
+  transform: scale(1.03);
+}
+
+.photo-caption {
+  padding: 17px 10px 8px;
+}
+
+@media (max-width: 650px) {
+  .photo-frame {
+    width: min(100%, 350px);
+    padding: 8px;
+    border-radius: 15px;
+  }
+
+  .photo-inner {
+    border-radius: 9px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
